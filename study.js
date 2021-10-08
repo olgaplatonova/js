@@ -1,11 +1,23 @@
 'use strict';
 
-const str = 'tEst';
+const options = {
+    name: 'test',
+    width: 1024,
+    height: 1024,
+    colors: {
+        border: 'black',
+        bg: 'red'
+    }
+};
 
-//console.log(str.toUpperCase());
-console.log(str.toLowerCase());
-console.log(str);
+// console.log(options.name);
 
-const test = '12.2px';
-console.log(parseInt(test));
-console.log(parseFloat(test));
+for (let key in options) {
+    if (typeof(options[key]) === 'object') {
+        for (let i in options[key]) {
+            console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+        }
+    } else {
+        console.log(`Свойство ${key} имеет значение ${options[key]}`);
+    }
+}
